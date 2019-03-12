@@ -1,4 +1,4 @@
-# center_popup
+# center_popup.js
 A library for creating a centered popup window
 
 ## Usage
