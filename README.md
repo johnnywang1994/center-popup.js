@@ -33,6 +33,28 @@ popup.close();
   Type: `color` Default: `white`
 
   The popup css background setting
+  
+## Methods
+
+- **open()**
+
+  Display a centered popup window.
+  
+- **close()**
+
+  Close the centered popup window.
+  
+- **fadeIn(seconds)**
+
+  Type: `Number` Default: `0.3`
+
+  FadeIn the centered popup window in specific time.
+
+- **fadeOut(seconds)**
+
+  Type: `Number` Default: `0.3`
+
+  FadeOut the centered popup window in specific time.
 
 ## License
 
