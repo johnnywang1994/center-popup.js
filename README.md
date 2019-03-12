@@ -6,7 +6,7 @@ A library for creating a centered popup window
 As a native plugin:
 
 ```js
-var popup = new Popup(document.getElementById('popup'), { width: 400, height: 300 });
+var popup = new Popup(document.getElementById('popup'), { width: '400px', height: '300px' });
 
 // Open this popup.
 popup.open();
