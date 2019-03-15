@@ -1,6 +1,6 @@
 /*!
- * center_popup.js
- * https://github.com/johnnywang1994/center_popup
+ * center-popup.js
+ * https://github.com/johnnywang1994/center-popup.js
  * Under the MIT License | (c) 2019 Johnny Wang
  */
 (function(global){
