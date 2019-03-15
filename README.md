@@ -6,12 +6,45 @@ A library for creating a centered popup window
 As a native plugin:
 
 ```js
-var popup = new Popup(document.getElementById('popup'), { width: '400px', height: '300px' });
+// 1. Use for type "custom"
+
+// define the html element to use
+<div id="popup">Hello World</div>
+
+// custom's opts sets the target choose for creating instance(which is ID popup element)
+var opts = { 'width': '400px', 'height': '300px' };
+var popup = new Popup(document.getElementById('popup'), opts);
 
 // Open this popup.
-popup.open();
+popup.open('custom');
+// or
+popup.fadeIn(0.3, 'custom');
+
 // Close this popup.
 popup.close();
+// or
+popup.fadeOut(0.3);
+
+
+
+// 2. Use for type "image"
+
+// define the html element to use
+<div id="popup" data-src="./example.jpg">Hello World</div>
+
+// custom's opts sets the image's wrapper(also can be set by default class is 'popup_image_wrappper')
+var opts = { 'border': '5px solid black', 'box-sizing': 'border-box' };
+var popup = new Popup(document.getElementById('popup'), opts);
+
+// Open this popup.
+popup.open('image');
+// or
+popup.fadeIn(0.3, 'image');
+
+// Close this popup.
+popup.close();
+// or
+popup.fadeOut(0.3);
 ```
 
 ## Options(CSS3)
@@ -36,7 +69,9 @@ popup.close();
   
 ## Methods
 
-- **open()**
+- **open(type)**
+
+  Type: `String` Default: `image`(can only use: `image` or `custom`)
 
   Display a centered popup window.
   
@@ -44,9 +79,11 @@ popup.close();
 
   Close the centered popup window.
   
-- **fadeIn(seconds)**
+- **fadeIn(seconds, type)**
 
-  Type: `Number` Default: `0.3`
+  seconds => Type: `Number` Default: `0.3`
+
+  type => Type: `String` Default: `image`(can only use: `image` or `custom`)
 
   FadeIn the centered popup window in specific time.
 
