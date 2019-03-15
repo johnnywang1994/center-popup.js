@@ -38,7 +38,8 @@
     var d_opts = {
       'display': 'block',
       'max-height': '600px',
-      'object-fit': 'scale-down'
+      'object-fit': 'scale-down',
+      'box-sizing': 'border-box'
     };
     var image = '<div class="popup_image_wrapper"><img class="popup_image" src="#" alt="#"></div>';
     document.body.insertAdjacentHTML('beforeend', template);
