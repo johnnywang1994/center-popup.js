@@ -32,7 +32,7 @@ popup.fadeOut(0.3);
 // define the html element to use
 <div id="popup" data-src="./example.jpg">Hello World</div>
 
-// custom's opts sets the image's wrapper(also can be set by default class is 'popup_image_wrapper')
+// custom's opts sets the image's style(also can be set by default class is 'popup_image')
 var opts = { 'border': '5px solid black', 'box-sizing': 'border-box' };
 var popup = new Popup(document.getElementById('popup'), opts);
 
