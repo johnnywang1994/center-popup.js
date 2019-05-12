@@ -9,7 +9,7 @@
   t.styleSheet ? t.styleSheet.cssText = e : t.appendChild(document.createTextNode(e)), document.getElementsByTagName("head")[0].appendChild(t);
 
   // instance create
-  var Popup = function(dom, opts){
+  var Popup = function(dom, opts = {}){
     var self = this;
     self.dom = dom;
     self.opts = opts;
@@ -82,7 +82,7 @@
   };
 
   // library methods
-  var methods = {
+  Popup.prototype = Object.assign({}, {
     open: function(t = 'image'){
       layout(this.dom, this.opts, t);
       document.querySelectorAll('.popup_out_wrapper')[0].style.opacity = '1.0';
@@ -102,10 +102,5 @@
       setTimeout(function(){ document.querySelectorAll('.popup_out_wrapper')[0].style.opacity = '0'; }, 0);
       setTimeout(function(){ target.parentNode.removeChild(target); }, s * 1000);
     }
-  };
-
-  // set methods to prototype
-  for (let p in methods) {
-    Popup.prototype[p] = methods[p];
-  };
+  })
 })(window);
