@@ -12,13 +12,13 @@ As a native plugin:
 <div id="popup">Hello World</div>
 
 // custom's opts sets the target choose for creating instance(which is ID popup element)
-var opts = { 'width': '400px', 'height': '300px' };
+var opts = { target: '#popup', type: 'custom' };
 var popup = new Popup(document.getElementById('popup'), opts);
 
 // Open this popup.
-popup.open('custom');
+popup.open();
 // or
-popup.fadeIn(0.3, 'custom');
+popup.fadeIn(0.3);
 
 // Close this popup.
 popup.close();
@@ -33,13 +33,13 @@ popup.fadeOut(0.3);
 <div id="popup" data-src="./example.jpg">Hello World</div>
 
 // custom's opts sets the image's style(also can be set by default class is 'popup_image')
-var opts = { 'border': '5px solid black' };
+var opts = { target: '#popup', type: 'image' };
 var popup = new Popup(document.getElementById('popup'), opts);
 
 // Open this popup.
-popup.open('image');
+popup.open();
 // or
-popup.fadeIn(0.3, 'image');
+popup.fadeIn(0.3);
 
 // Close this popup.
 popup.close();
@@ -49,29 +49,24 @@ popup.fadeOut(0.3);
 
 ## Options(CSS3)
 
-- **width**
+- **target**
 
-  Type: `Number` Default: `500`
+  Type: `String`
 
-  The popup css width.
+  set for target's dom name, eg. '#popup'
 
-- **height**
+- **type**
 
-  Type: `Number` Default: `400`
+  Type: `String` Value: `custom` or `image`
 
-  The popup css height.
-  
-- **background**
+  choose type of the popup window, now only support 'custom' & 'image'.
 
-  Type: `color` Default: `white`
-
-  The popup css background setting
   
 ## Methods
 
-- **open(type)**
+- **open()**
 
-  Type: `String` Default: `image`(can only use: `image` or `custom`)
+  Type: `String`
 
   Display a centered popup window.
   
@@ -79,11 +74,9 @@ popup.fadeOut(0.3);
 
   Close the centered popup window.
   
-- **fadeIn(seconds, type)**
+- **fadeIn(seconds)**
 
-  seconds => Type: `Number` Default: `0.3`
-
-  type => Type: `String` Default: `image`(can only use: `image` or `custom`)
+  Type: `Number` Default: `0.3`
 
   FadeIn the centered popup window in specific time.
 
