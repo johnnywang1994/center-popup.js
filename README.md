@@ -1,6 +1,17 @@
 # center-popup.js
 A library for creating a centered popup window
 
+## Install
+
+```
+npm i center_popup
+```
+
+```js
+import Popup from 'center_popup';
+const Popup = require('center_popup');
+```
+
 ## Usage
 
 As a native plugin:
