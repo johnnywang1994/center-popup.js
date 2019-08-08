@@ -8,69 +8,77 @@ npm i center_popup
 ```
 
 ```js
-import Popup from 'center_popup';
 const Popup = require('center_popup');
 ```
 
 ## Usage
 
-As a native plugin:
+define the html element to use
 
-```js
-// 1. Use for type "custom"
-
-// define the html element to use
+```html
 <div id="popup">Hello World</div>
-
-// custom's opts sets the target choose for creating instance(which is ID popup element)
-var opts = { target: '#popup', type: 'custom' };
-var popup = new Popup(document.getElementById('popup'), opts);
-
-// Open this popup.
-popup.open();
-// or
-popup.fadeIn(0.3);
-
-// Close this popup.
-popup.close();
-// or
-popup.fadeOut(0.3);
-
-
-
-// 2. Use for type "image"
-
-// define the html element to use
-<div id="popup" data-src="./example.jpg">Hello World</div>
-
-// custom's opts sets the image's style(also can be set by default class is 'popup_image')
-var opts = { target: '#popup', type: 'image' };
-var popup = new Popup(document.getElementById('popup'), opts);
-
-// Open this popup.
-popup.open();
-// or
-popup.fadeIn(0.3);
-
-// Close this popup.
-popup.close();
-// or
-popup.fadeOut(0.3);
 ```
 
-## Options(CSS3)
+Create Instance
 
-- **target**
+```js
+// will automatically hide the target
+var popup = new Popup(document.getElementById('popup'));
+
+// easily open it by
+popup.open();
+// or
+popup.fadeIn(.3);
+
+// easily close it by
+popup.close();
+// or
+popup.fadeOut(.3);
+```
+
+You can also use string HTML as input
+
+```js
+var popup = new Popup('<p>Hello World</p>');
+
+popup.open();
+```
+
+Add event to string input, and dont have to addEvent every time you open 
+
+the popup window.
+
+```js
+var popup = new Popup('<p>Hello World</p>', {
+  success() {
+    console.log(this); // Popup instance
+    this.node.addEventListener('click', function() {
+      alert('Trigger!');
+    });
+  }
+})
+```
+
+
+## Options
+
+default: {}
+
+- **display**
 
   Type: `String`
 
-  set for target's dom name, eg. '#popup'
+  Default: block
 
-- **type**
+  CSS display property for target to show.
 
-  Type: `String` Value: `custom` or `image`
+- **success**
 
-  choose type of the popup window, now only support 'custom' & 'image'.
+  Type: `Function`
+
+  function which execute after node has been created, you can use this to 
+
+  add events to you string input element
 
   
 ## Methods
