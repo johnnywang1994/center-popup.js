@@ -83,11 +83,27 @@ default: {}
   
 ## Methods
 
-- **open()**
+- **open(fn)**
 
   Type: `String`
 
   Display a centered popup window.
+
+  fn => A function, which execute before append popup window into body, 
+
+  you can use this function to do anything you like to the popup window.
+
+  it receives one argument, that argument is the popup window you are going to append.
+
+  ```js
+  const popup = new Popup('<p>Hello World</p>');
+
+  popup.open(template => {
+    console.log(template);
+  })
+
+  // <div class="popup-wrapper">...</div>
+  ```
   
 - **close()**
 
@@ -98,6 +114,12 @@ default: {}
   Type: `Number` Default: `0.3`
 
   FadeIn the centered popup window in specific time.
+
+- **fadeInDown(seconds)**
+
+  Type: `Number` Default: `0.3`
+
+  FadeInDown the centered popup window in specific time.
 
 - **fadeOut(seconds)**
 
