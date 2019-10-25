@@ -28,12 +28,12 @@ var popup = new Popup(document.getElementById('popup'));
 // easily open it by
 popup.open();
 // or
-popup.fadeIn(.3);
+popup.fadeIn();
 
 // easily close it by
 popup.close();
 // or
-popup.fadeOut(.3);
+popup.fadeOut();
 ```
 
 You can also use string HTML as input
@@ -109,21 +109,15 @@ default: {}
 
   Close the centered popup window.
   
-- **fadeIn(seconds)**
-
-  Type: `Number` Default: `0.3`
+- **fadeIn()**
 
   FadeIn the centered popup window in specific time.
 
-- **fadeInDown(seconds)**
-
-  Type: `Number` Default: `0.3`
+- **fadeInDown()**
 
   FadeInDown the centered popup window in specific time.
 
-- **fadeOut(seconds)**
-
-  Type: `Number` Default: `0.3`
+- **fadeOut()**
 
   FadeOut the centered popup window in specific time.
 
