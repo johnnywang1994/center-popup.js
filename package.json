@@ -1,6 +1,6 @@
 {
   "name": "center_popup",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A library for creating a centered popup window",
   "main": "index.js",
   "scripts": {
